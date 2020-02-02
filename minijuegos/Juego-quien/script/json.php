@@ -24,6 +24,6 @@
 			'pistas'=>array("Los padres son Richard y Oracene Price", "Ha ostentado la primera posición en el ranking WTA durante 319 semanas", "Ha ganado un total de 39 títulos de Grand Slam: 23 de ellos individuales, 14 en dobles femeninos y 2 en dobles mixtos"))
 	);
 	
-	echo json_encode($json);
+		echo json_encode($json);
 
 ?>

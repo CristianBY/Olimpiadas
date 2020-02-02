@@ -1,5 +1,42 @@
-
 $(document).ready(function(){
+    $.post("./script/json.php", function(r){
+    	var obj = JSON.parse(r);
+    	var aleatorio= 0;
+		var src;
+		var pista;
+		var cont = 0;
+		for(var i = 0; i<obj.length ; i++){
+			aleatorio= Math.floor(Math.random() * 5);
+			$("h3").text(obj[aleatorio].pregunta);
+			src = obj[aleatorio].respuesta;
+			pista = obj[aleatorio].pistas;
+		}
+		$('img').click(function(){
+			if ($(this).attr('src') == src){
+				$('.imagen').css('display','none');
+				$('.acierto').css('display','block');
+				$('.bien').attr('src', './imagenes/bien.jpg');
+				//cont =0;
+			}
+			else{
+				$(this).attr('src', './imagenes/mal.jpg');
+				pistitas(pista,cont);
+				cont++;
+			}
+		});
+
+    });
+});
+function pistitas(pista,cont){
+	if(cont <= 2){
+		var li = $("<li>");
+		$('ul').append(li);
+		var texto_li = (pista[cont]);
+		li.append(texto_li);
+		li.css('color','white');
+	}	
+}
+/*$(document).ready(function(){
 	var json = [
 		{
 		pregunta:"¿Quien gano el segunda mejor marca de la historia de Reino Unido?",
@@ -67,4 +104,4 @@ function pistitas(pista,cont){
 	}
 
 	
-}
+}*/

@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
     var j = 600;
     var fetch = true;
@@ -49,4 +48,3 @@ function formatSeconds(secs) {
     var s = Math.floor(secs - h * 3600 - m * 60);
     return pad(m) + ":" + pad(s);
 }
-

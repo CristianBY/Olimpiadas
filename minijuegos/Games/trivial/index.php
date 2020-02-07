@@ -13,6 +13,7 @@
 </head>
 
 <body>
+
     <?php
     include("functions.php");
     $pregunta = mt_rand(1,10);

@@ -1,5 +1,5 @@
 <?php 
-include("BaseDatos.php" );
+include("../../Model/BaseDatos.php" );
     function getQuestion($numero){
         $conn = BaseDatos::connectDB();
         $query = "SELECT pregunta FROM preguntas where id =".$numero.";";
@@ -23,8 +23,6 @@ include("BaseDatos.php" );
             $respuesta.array_push($respuesta['respuesta4']);
          }  
          return $respuesta;
-
-
         
     }
 

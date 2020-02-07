@@ -19,20 +19,7 @@ abstract class BaseDatos
         return $connection;
     }
 
-    public static function verificarUsuario($user, $pass)
-    {
 
-        $conn = BaseDatos::connectDB();
-        $contraseña = "SELECT rol from usuario where usuario = '" . $user . "' and pwd = '" . $pass . "'";
-        $resultado = $conn->query($contraseña);
-        
-            foreach ($resultado as $row) {
-
-                $resultado = $row['rol'];
-            }
-            return $resultado;
-   
-    }
     
     public static function closeConnection(){
         $conn = BaseDatos::connectDB();

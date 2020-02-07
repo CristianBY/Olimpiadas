@@ -12,7 +12,6 @@ $(document).ready(function(){
                 j=j-20;
                 fetch = true;
             }
- 
         }else{
             fallo = fallo +1;
             if(fallo == 2){
@@ -23,9 +22,14 @@ $(document).ready(function(){
         console.log(fallo);  
         $("#azul").css({ top: j + "px" });
     }); 
-
-setInterval(demo(), 20);
+    var crono = setInterval(demo(), 20);
+    //Parar cronómetro
+    if(j == 500){
+        clearInterval(crono);
+    }
 })
+
+
 
 //Cronometro
 function demo() {
@@ -48,3 +52,4 @@ function formatSeconds(secs) {
     var s = Math.floor(secs - h * 3600 - m * 60);
     return pad(m) + ":" + pad(s);
 }
+

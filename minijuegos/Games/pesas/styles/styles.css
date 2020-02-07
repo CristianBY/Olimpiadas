@@ -16,3 +16,8 @@ section{
     padding-bottom: 650px;
     text-align: center;
 }
+
+#azul{
+    top: 600px;
+    position: absolute;
+}

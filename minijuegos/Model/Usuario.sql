@@ -2,11 +2,9 @@
         id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
         firstName varchar(100),
         surnames varchar (500),
-        course varchar(300)
+        course varchar(300),
+        puntuaction int(11)
 
     );
 
-    create table puntuaciones (
-        id int(11) NOT NULL PRIMARY KEY,
-        puntuacion int(20)
-    )
+  

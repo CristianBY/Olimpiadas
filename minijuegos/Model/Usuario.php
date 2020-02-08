@@ -28,18 +28,8 @@ class Usuario{
     }
 
     //Set del id que lo extraemos de la bd y con los datos del propio usuario y luego se lo asignamos al atributo
-    public function setId(){
- 
-        $conn = BaseDatos::connectDB();
-        $id = "SELECT id from users where firstName = '".$this->name . "' and surnames = '" . $this->surnames . "'";
-        $resultado = $conn->query($id);
-        foreach($resultado as $r){
-             $id = $r['id'];
-        }
-        $this->id = $id;
-        $conn = BaseDatos::closeConnection();
-
-        
+    public function setId($id){
+        $this->id = $id;         
     }   
 
     function setSurnames($surnames){
@@ -92,7 +82,7 @@ class Usuario{
 
     public function insertUser(){
         $conn = BaseDatos::connectDB();
-        $insert = "INSERT INTO users (firstName, surnames,course) values ('".$this->name."','".$this->surnames."','".$this->course."');";
+        $insert = "INSERT INTO users (firstName, surnames,course, puntuaction) values ('".$this->name."','".$this->surnames."','".$this->course."','".$this->puntuaction."');";
         try {
             $conn ->exec($insert);
 
@@ -104,25 +94,10 @@ class Usuario{
            
        }
 
-       public function insertPunctuation(){
-        $conn = BaseDatos::connectDB();
-        $insert = "INSERT INTO puntuaciones (id, puntuacion) values ('".$this->id."','".$this->puntuaction."');";
-        try {
-            $conn ->exec($insert);
 
-
-        } catch (PDOException $e) {
-            echo $e->getMessage();
-        }
-        $conn = BaseDatos::closeConnection();
-           
-
-       }
 
        
 
 
 }
 
-
-?>

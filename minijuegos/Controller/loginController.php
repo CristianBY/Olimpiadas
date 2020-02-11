@@ -2,7 +2,7 @@
     session_start();
     require("../View/vistaIndex.html");
     require("../Model/Usuario.php");
-    $user = new Usuario($_POST['nameGroup'],$_POST['course']);
+    $user = new User($_POST['nameGroup'],$_POST['course']);
     $validation = $user->verificarUsuario(); // Verificación de usuario en la base de datos
 
     if (isset($_POST['enviar'])){

@@ -1,5 +1,5 @@
 <?php 
-require ('Usuario.php');
+require ('User.php');
 
 
 class Podium{
@@ -12,7 +12,7 @@ class Podium{
         $usuarios = $conn->query($query);
         
         foreach ($usuarios as $usuario) {
-            $user = new Usuario($usuario['firstName'],$usuario['surnames'],$usuario['course'],$usuario['puntuaction']);
+            $user = new User($usuario['nameGroup'],$usuario['course'],$usuario['puntuaction']);
             $user ->setId($usuario['id']);
             array_push($this->ten,$usuario);
                      

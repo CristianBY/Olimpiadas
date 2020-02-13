@@ -6,7 +6,7 @@ $(document).ready(function() {
 
     //Creamos petición de preguntas y posibles respuestas a servidor
     $.ajax({
-        url: "../controller/preguntaRespuesta.php",
+        url: "../../controller/preguntaRespuesta.php",
         type: 'post',
         datatype: 'json',
         data: { id: aleatorio },

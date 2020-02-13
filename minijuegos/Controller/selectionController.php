@@ -1,24 +1,23 @@
 <?php
-    session_start();
-    require('selectGame.html');
-    controlSelectGame($_SESSION['Game']);
-
+   
+    controlSelectGame($_POST['numeroDeJuego']);
+    
     function controlSelectGame($numeroDeJuego){
         switch ($numeroDeJuego) {
             case 0:
-                header('../Games/Juego-quien/script/javas.js'); // Juego ¿Quién es quién?
+                header('Location: ../Games/quien/index.html'); // Juego ¿Quién es quién?
                 break;
             case 1:
-                header('../Games/lanzamiento/lanzamiento.html'); // Juego Lanzamiento
+                header('Location: ../Games/lanzamiento/lanzamiento.html'); // Juego Lanzamiento
                 break;
             case 2:
-                header('../Games/trivial/index.php'); // Juego Trivial
+                header('Location: ../Games/trivial/index.php'); // Juego Trivial
                 break;
             case 3:
-                header('../Games/apuesta/index.html'); // Juego Apuestas
+                header('Location: ../Games/apuesta/index.html'); // Juego Apuestas
                 break;
             case 4:
-                header('../Games/pesas/prueba1.html'); // Juego Pesas
+                header('Location: ../Games/pesas/prueba1.html'); // Juego Pesas
                 break;
         }
     }

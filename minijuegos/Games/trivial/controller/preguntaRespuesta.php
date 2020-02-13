@@ -11,7 +11,7 @@ array_push($enviado,$respuestas);
 array_push($enviado,$pregunta);
 
 echo json_encode($enviado);
-
+echo "prueba";
 
 
 

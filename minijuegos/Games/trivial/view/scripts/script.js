@@ -1,13 +1,17 @@
 $(document).ready(function() {
+    
     //Obtenemos un número aleatorio de 1 a 10
     var aleatorio = getRandomArbitrary(10, 1);
+    
+
     //Creamos petición de preguntas y posibles respuestas a servidor
     $.ajax({
-        url: "preguntaRespuesta.php",
+        url: "../controller/preguntaRespuesta.php",
         type: 'post',
         datatype: 'json',
         data: { id: aleatorio },
         success: function(response) {
+            
             var json = JSON.parse(response);
             $("#pregunta").text(json[1]);
             $("#A").text(json[0].respuesta1);
@@ -24,7 +28,7 @@ $(document).ready(function() {
         var respuesta = $(this).attr("id");
         //Hacemos petición al servidor para comprobar respuestas.
         $.ajax({
-            url: "correcta.php",
+            url: "../Games/trivial/controller/correcta.php",
             type: 'post',
             datatype: 'json',
             data: { id: aleatorio },

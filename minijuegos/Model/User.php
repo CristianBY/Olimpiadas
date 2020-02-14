@@ -60,10 +60,11 @@ class User
     {
         $answer = null;
         $conn = BaseDatos::connectDB();
-        $id = "SELECT id from users where nameGroup = '" . $this->nameGroup . "';";
+        $id = "SELECT id from users where nameGroup = \"" . $this->nameGroup . "\";";
 
         $resultado = $conn->query($id);
-        if ($resultado > 0) {
+
+        if ($resultado->fetchColumn() > 0) {
             $answer = true;
         } else {
             $answer = false;

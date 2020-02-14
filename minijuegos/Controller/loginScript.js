@@ -7,15 +7,26 @@ $(document).ready(function () {
     });
     $("#entrar").click(function () { 
         
-        window.location.replace("http://localhost/Olimpiadas/minijuegos/Controller/loginController.php");
         $.ajax({
             type: "POST",
-            url: "loginController.php",
+            url: "../Controller/loginController.php",
+            data: {
+                nameGroup: $("#nameGroup").val(),
+                course: $("#course").val()
+            },
             dataType: "json",
             success: function (response) {
-                response
-            }
+                if (response){
+                    sessionStorage.setItem("misesion",response.nameGroup);
+                } else {
+                    $("form").append("<p>Nombre de grupo existente</p>");
+                }
+
+            },
+
+
         });
+
     });
 
 

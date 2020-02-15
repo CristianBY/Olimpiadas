@@ -19,7 +19,7 @@ $(document).ready(function () {
                 if (response == "ERROR"){
                     $("#text").prepend("<p class='error'>Nombre de grupo existente inserte otro</p>");
                 } else {
-                    sessionStorage.setItem("misesion",response.nameGroup);
+                    sessionStorage.setItem("misesion",response.nameGroup+","+response.course);
                     sessionStorage.setItem("mijuego",0);
                     window.location.replace("http://localhost/Olimpiadas/minijuegos/View/vistaMapa/selectGame.html");
                 }

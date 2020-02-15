@@ -1,3 +1,3 @@
 <?php
-    require('loginController.php');
+    header("Location : View/vistaIndex.html");
 ?>

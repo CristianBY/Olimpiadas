@@ -28,6 +28,9 @@ $(document).ready(function(){
 					heigth: '700px',
 					textalign: 'center'
 				});
+				setTimeout(() => { //Salida del juego
+					window.location.replace("../../View/vistaMapa/selectGame.html");
+				}, 1000);
 			}
 			else {
 

@@ -12,14 +12,16 @@ $(document).ready(function () {
             url: "../Controller/loginController.php",
             data: {
                 nameGroup: $("#nameGroup").val(),
-                course: $("#course").val()
+                course: $(".course").val()
             },
             dataType: "json",
             success: function (response) {
-                if (response){
-                    sessionStorage.setItem("misesion",response.nameGroup);
+                if (response == "ERROR"){
+                    $("#text").prepend("<p class='error'>Nombre de grupo existente inserte otro</p>");
                 } else {
-                    $("form").append("<p>Nombre de grupo existente</p>");
+                    sessionStorage.setItem("misesion",response.nameGroup);
+                    sessionStorage.setItem("mijuego",0);
+                    window.location.replace("http://localhost/Olimpiadas/minijuegos/View/vistaMapa/selectGame.html");
                 }
 
             },
@@ -28,6 +30,10 @@ $(document).ready(function () {
         });
 
     });
+
+	setInterval(function(){
+		$("#efectoBlink").toggleClass("parpadeo");
+	},400);
 
 
 });

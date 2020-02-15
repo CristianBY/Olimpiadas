@@ -42,7 +42,9 @@ $(document).ready(function() {
 function isCorrect(respuesta, correcta) {
     if (respuesta == correcta) {
         alert("ACERTADOddd");
-        window.location.href = "index.html";
+        setTimeout(() => { //Salida del juego
+            window.location.replace("../../View/vistaMapa/selectGame.html");
+        }, 1000);
     } else(alert("ERRROOOOR ,INUTIL"))
 }
 

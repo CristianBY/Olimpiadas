@@ -7,6 +7,8 @@
     if (!$validation){ // Login correcto
         $usuario = ["nameGroup"=>$_POST['nameGroup'],"course"=>$_POST['course']];
         echo json_encode($usuario);
-    }    
+    } else{
+        echo "ERROR";
+    } 
        
 ?>

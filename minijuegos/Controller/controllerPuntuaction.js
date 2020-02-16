@@ -1,10 +1,11 @@
-$(document).ready(function () {
-    
-$.ajax({
+$(document).ready(function() {
+
+
+    $.ajax({
         type: "post",
         url: "../Controller/controllerPodio.php",
         dataType: "json",
-        success: function (response) {
+        success: function(response) {
             var position = 1;
             response.forEach(element => {
                 $("table").append("<tr>");
@@ -14,11 +15,11 @@ $.ajax({
                 $("td:last").text(element.nameGroup)
                 $("tr:last").append("<td>");
                 $("td:last").text(element.puntuaction)
-                position ++;
+                position++;
             });
-            
 
-            
+
+
         }
     });
 });

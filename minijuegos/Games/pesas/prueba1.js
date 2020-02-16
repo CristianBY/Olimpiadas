@@ -43,7 +43,8 @@ function levanta(){
             if(resultado == "00:00"){
                 $(document).off("keyup");
                 clearInterval(crono);
-                $("#output").text("No has podido levantar la pesa en el tiempo establecido, otra vez será. ") 
+                $("#output").text("No has podido levantar la pesa en el tiempo establecido, otra vez será. ");
+                setTimeout(function (){window.location.replace("../../View/vistaMapa/selectGame.html")}, 4000);
             }
             var puntuacion = parseInt(calculaPuntuacion(resultado))
             $("#output").text("Tu puntuación ha sido " +  Math.floor(puntuacion));

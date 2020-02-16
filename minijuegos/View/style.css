@@ -25,7 +25,19 @@ h1, p {
     font-family: dance;
 }
 
+#efectoBlink {
+    color: white;
+}
+
+.parpadeo{
+    display:none;
+}
+
+.error{
+    color: white;
+}
+
 @font-face {
     font-family: "dance";
-    src: url("./fuente/arcade.ttf");
+    src: url("./fuente/arcade.TTF");
 }

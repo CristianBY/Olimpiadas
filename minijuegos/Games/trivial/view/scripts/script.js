@@ -1,17 +1,25 @@
 $(document).ready(function() {
     if (sessionStorage['trivialPreguntas'] == null) {
         sessionStorage.setItem('trivialPreguntas', 0);
-        alert("Existe" + sessionStorage['trivialPreguntas'])
+        sessionStorage.setItem('NumberQuestion', JSON.stringify([0]));
+
 
     } else {
-        sessionStorage['trivialPreguntas']++;
+        if (JSON.parse(sessionStorage.NumberQuestion).length > 3) {
+            window.location.href = "../../../View/puntuaction.html";
 
-        alert("No existe" + sessionStorage['trivialPreguntas'])
-
+        }
     }
     //Obtenemos un número aleatorio de 1 a 10
 
     var aleatorio = getRandomArbitrary(10, 1);
+    while (JSON.parse(sessionStorage.NumberQuestion).includes(aleatorio)) {
+        aleatorio = getRandomArbitrary(10, 1);
+
+    }
+    var preguntas = JSON.parse(sessionStorage.NumberQuestion);
+    preguntas.push(aleatorio);
+    sessionStorage.NumberQuestion = JSON.stringify(preguntas);
 
 
     //Creamos petición de preguntas y posibles respuestas a servidor
@@ -53,7 +61,9 @@ $(document).ready(function() {
                     isCorrect(respuesta, correcta);
                     clearInterval(eleccion);
 
-                }, 3000);
+                }, 3000)
+
+
 
             }
         })
@@ -68,7 +78,8 @@ function isCorrect(respuesta, correcta) {
     if (respuesta == correcta) {
 
         $(respuestaSelector).toggle();
-        $(respuestaSelector).css("background-color", "green")
+        $(respuestaSelector).css("background-color", "green");
+        sessionStorage.trivialPreguntas = parseInt(sessionStorage.trivialPreguntas) + 500;
         setTimeout(function() {
             window.location.href = "index.html";
         }, 2000);

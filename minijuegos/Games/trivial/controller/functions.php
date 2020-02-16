@@ -1,5 +1,5 @@
 <?php 
-include("../../Model/BaseDatos.php" );
+include("../../../Model/BaseDatos.php");
     function getQuestion($numero){
         $conn = BaseDatos::connectDB();
         $query = "SELECT pregunta FROM preguntas where id =".$numero.";";

@@ -1,23 +1,31 @@
 ﻿body {
-    background-position: center center;
+    background-image: url("./imagen/marco.png"), url("./imagen/fondo.png");
+    background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: auto;
 }
-section {
-    background-color: lightpink;
-    padding: 2%;
-    opacity:0.8;
-    width:40%;
-    margin-left:15%;
-    margin-top:5%;
+#contenido {
+    background-color: rgba(236, 103, 8, .8);
 }
-h1 {
-    text-align:center;
+#entrar {
+    background-color:black;
+    border-color:red;
+    font-size:18px;
 }
-input{
-    margin-top:3%;
+#puntuacion {
+    background-color: black;
+    border-color: red;
+    font-size: 18px;
 }
-#ver {
-    margin-left:60%;
+img {
+    width:30%;
+}
+h1, p {
+    font-family: dance;
+}
+
+@font-face {
+    font-family: "dance";
+    src: url("./fuente/arcade.ttf");
 }

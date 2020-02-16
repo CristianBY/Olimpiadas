@@ -1,12 +1,10 @@
 $(document).ready(function() {
-    if (sessionStorage['trivialPreguntas'] == null) {
-        sessionStorage.setItem('trivialPreguntas', 0);
+    if (sessionStorage['NumberQuestion'] == null) {
         sessionStorage.setItem('NumberQuestion', JSON.stringify([0]));
-
-
     } else {
         if (JSON.parse(sessionStorage.NumberQuestion).length > 3) {
-            window.location.href = "../../../View/puntuaction.html";
+
+            window.location.href = "../../../View/vistaMapa/selectGame.html";
 
         }
     }
@@ -79,7 +77,7 @@ function isCorrect(respuesta, correcta) {
 
         $(respuestaSelector).toggle();
         $(respuestaSelector).css("background-color", "green");
-        sessionStorage.trivialPreguntas = parseInt(sessionStorage.trivialPreguntas) + 500;
+        sessionStorage.miPuntuaction = parseInt(sessionStorage.miPuntuaction) + 500;
         setTimeout(function() {
             window.location.href = "index.html";
         }, 2000);

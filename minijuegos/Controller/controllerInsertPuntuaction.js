@@ -1,6 +1,5 @@
 $(document).ready(function() {
     if (sessionStorage.misesion != null) {
-        
         $.ajax({
             type: "POST",
             url: "../Controller/controllerInsertPuntuaction.php",
@@ -12,7 +11,7 @@ $(document).ready(function() {
             },
 
             success: function(response) {
-
+                sessionStorage.clear();
             }
         });
     }

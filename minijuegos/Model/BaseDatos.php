@@ -2,7 +2,7 @@
 abstract class BaseDatos
 {
 
-    private static $server = '34.205.30.97';
+    private static $server = 'localhost';
     private static $dataBase = 'olimpiadas';
     private static $user = 'olimpiadas';
     private static $pass = 'abc123.';

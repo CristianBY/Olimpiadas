@@ -53,7 +53,7 @@ function movimientoMario() {
             $("#mario").animate({ left: "85%", }, 3100);
             sessionStorage.setItem('mijuego', 0);
             setTimeout(() => {
-                window.location.replace("http://http://ec2-34-205-30-97.compute-1.amazonaws.com//Olimpiadas/minijuegos/View/puntuaction.html");
+                window.location.replace("http://http://ec2-34-205-30-97.compute-1.amazonaws.com/Olimpiadas/minijuegos/View/puntuaction.html");
             }, 2000);
 
         default:

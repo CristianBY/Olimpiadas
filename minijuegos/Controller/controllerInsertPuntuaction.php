@@ -1,8 +1,9 @@
 <?php 
 require ('../Model/User.php');
-$usuario = new User($_POST['nameGroup'],$_POST['course'],$_POST['puntuaction']);
+$usuario = new User($_POST['nameGroup'],$_POST['course'],intval($_POST['puntuaction']));
 $usuario ->insertUser();
-echo json_encode($datos);
+
+echo json_encode($usuario);
 
 
 ?>

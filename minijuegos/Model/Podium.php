@@ -1,10 +1,8 @@
 <?php 
 require ('User.php');
 
-
 class Podium{
     private $ten = array();
-
     
     public function setTen(){
         $conn = BaseDatos::connectDB();

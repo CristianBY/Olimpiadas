@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    
     $("#puntuacion").click(function() {
 
         window.location.replace("http://localhost/Olimpiadas/minijuegos/View/puntuaction.html");

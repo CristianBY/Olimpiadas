@@ -1,7 +1,5 @@
 $(document).ready(function() {
-
-
-    $.ajax({
+     $.ajax({
         type: "post",
         url: "../Controller/controllerPodio.php",
         dataType: "json",

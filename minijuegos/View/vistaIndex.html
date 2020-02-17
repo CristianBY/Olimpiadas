@@ -1,44 +1,51 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8" />
-	<title></title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Olimpiadas</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="../Controller/loginScript.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
-<body>
-	<div class="container-sm">
-		<div class="row " >
-			<div class="col-6 p-3 ml-auto mr-auto mt-5" id="contenido">
-				<div class="col-12 ">
-					<img src="./imagen/logo.png" / class="rounded float-left">
-					<h1 class="display-4">Tokio2020</h1>
-				</div>
-				<form method="post" action="">
-					<div class="col-12 pt-4" id="text">
-						<p class="h4">Nombre del grupo <input type="text" name="nameGroup" required id="nameGroup" class="form-control"></p>
-						<p class="h4">Cursos</p>
-					</div>
-					<div id="text">
-						<p class="h4"><input type="radio" name="curso" value="Bach" required id="bach" class="ml-4">Bachillerato</p>
-						<p class="h4"><input type="radio" name="curso" value="ESO" required id="eso" class="ml-4"> ESO</p>
-						<p class="h4"><input type="radio" name="curso" value="FP" required id="fp" class="ml-4"> Formacion  profecional</p>
-					</div>
-					<div class="col-12 mt-4">
-						<p>
-							<input id="entrar" class="btn btn-primary float-left " type="button" name="entrar" value="Entrar">
-							<input id="puntuacion" class="btn btn-primary float-right  " type="button" name="verPuntuacion" value="Ver Puntuación">
-						</p>
-					</div>
-				</form>
-			</div>
-		</div>
 
-	</div>
-	
+<body>
+    <div class="container-sm">
+        <div class="row ">
+            <div class="col-6 p-3 ml-auto mr-auto mt-5" id="contenido">
+                <div class="col-12 ">
+                    <img src="./imagen/logo.png" class="rounded float-left">
+                    <h1 class="display-4">Tokio2020</h1>
+                </div>
+                <form method="post" action="">
+                    <div class="col-12 pt-4" id="text">
+                        <p class="h4">Nombre del grupo <input type="text" name="nameGroup" required id="nameGroup" class="form-control"></p>
+                        <p class="h4">Cursos</p>
+                    </div>
+                    <div id="text2">
+                        <p class="h4"><input type="radio" name="course" value="bach" required id="bach" class="ml-4 course">Bachillerato</p>
+                        <p class="h4"><input type="radio" name="course" value="eso" required id="eso" class="ml-4 course"> ESO</p>
+                        <p class="h4"><input type="radio" name="course" value="fp" required id="fp" class="ml-4 course"> Formacion profecional</p>
+                    </div>
+                    <div class="col-12 mt-4">
+                        <p>
+                            <input id="entrar" class="btn btn-primary float-left " type="button" name="entrar" value="Entrar">
+                            <input id="puntuacion" class="btn btn-primary float-right  " type="button" name="verPuntuacion" value="Ver Puntuación">
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <p class="h4 text-right" id="efectoBlink">INSERT COIN</p>
+    </div>
+
 </body>
+
 </html>

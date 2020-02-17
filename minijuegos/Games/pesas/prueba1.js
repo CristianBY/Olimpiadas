@@ -2,6 +2,12 @@ $(document).ready(function(){
     pressStart();
     $(".button").click(function(){
     levanta();
+
+    setTimeout(function () {
+        $("#output").text("No has podido levantar la pesa en el tiempo establecido, otra vez será. ")
+        setTimeout(function (){window.location.replace("http://localhost/Olimpiadas/minijuegos/View/vistaMapa/selectGame.html")}, 3000);
+
+    },30000);
     //Movimiento de escenario
     $('body').animate({
         'background-position-x': '8080%'
@@ -16,6 +22,7 @@ function levanta(){
     var fallo = 0;
 
     var crono=setInterval(demo(), 20);
+
     
     $(document).bind("keyup", function(event) { 
         
@@ -36,6 +43,10 @@ function levanta(){
             }
         }
         ///
+
+  
+            
+        
         console.log(fallo);
         $("#pesas").css({ top: j + "px" });  
         //Para el crono cuando la pesa llega arriba y guarda el tiempo tardado 
@@ -43,19 +54,13 @@ function levanta(){
             clearInterval(crono);
             $(document).off("keyup");
             var resultado = $("#output").text();
-            if(resultado == "00:00"){
-                $(document).off("keyup");
-                clearInterval(crono);
-                $("#output").text("No has podido levantar la pesa en el tiempo establecido, otra vez será. ")
-                setTimeout(function (){window.location.replace("http://localhost/Olimpiadas/minijuegos/View/vistaMapa/selectGame.html")}, 3000);
-                
-            }
             var puntuacion = parseInt(calculaPuntuacion(resultado))
             $("#output").text("Tu puntuación ha sido " +  Math.floor(puntuacion));
             sessionStorage.miPuntuaction = parseInt(sessionStorage.miPuntuaction) + puntuacion;
             setTimeout(function (){window.location.replace("http://localhost/Olimpiadas/minijuegos/View/vistaMapa/selectGame.html")}, 3000);
 
         }
+ 
         if(j>630){
             $(document).off("keyup");
             clearInterval(crono);

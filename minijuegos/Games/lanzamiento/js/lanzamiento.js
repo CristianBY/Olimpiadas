@@ -99,14 +99,14 @@ $(document).ready(function () {
                 $(".puntuacion").css("top", "75%");
                 $(".puntuacion").css("left", "10%");
                 if (xMax <600){
-                    $(".puntuacion").text("UY QUE MALO!!!"+xMax);
+                    $(".puntuacion").text("UY QUE MALO!!!");
                 } else {
-                    $(".puntuacion").text("UY QUE BUENO!!!"+xMax);
+                    $(".puntuacion").text("UY QUE BUENO!!!");
                 }
                 clearInterval(intervaloLanzamiento);
             }
         },velocidadIntervalo);
-        
+        sessionStorage.miPuntuaction = parseInt(sessionStorage.miPuntuaction) + xMax;//meter puntuación
         setTimeout(() => {
             window.location.replace("../../View/vistaMapa/selectGame.html");
         },8000);
@@ -139,7 +139,7 @@ $(document).ready(function () {
         }
     }
 
-    function factorSuerte(xMax){
+    function factorSuerte(xMax){ // Factor suerte en el lanzamiento
         var suerte = Math.floor(Math.random() * 9) + 1;
         suerte = 1 + suerte/10;
         return xMax*suerte;

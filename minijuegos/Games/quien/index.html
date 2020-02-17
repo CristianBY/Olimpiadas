@@ -2,7 +2,6 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-
     <meta charset="utf-8" />
     <title></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -13,99 +12,124 @@
     <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
     <script type="text/javascript" src="./script/javas.js"></script>
     <link rel="stylesheet" type="text/css" href="./style/style.css">
-
 </head>
 <body>
-    <div class="container-sm">
+    <!--Contenedor con margen y padding-->
+    <div class="container ml-auto mr-auto mt-5 p-4">
+        
         <div class="row">
-            <h1 class="display-1">¿Quien es quien?</h1>
-            <h3></h3>
-        </div>
-
-        <div class="row">
-
-            <div class="col-3 " id="card">
-                <div class="front">
-                    <img class="figure-img img-thumbnail" src="./imagenes/farah.jpg">
-                </div>
-                <div class="back">
-                    <img class="figure-img img-thumbnail" src="./imagenes/mal.jpg">
-                </div>
-            </div>
-
-
-            <div class="col-3" id="card1">
-                <div class="front">
-                    <img class=" figure-img img-thumbnail" src="./imagenes/nadal.jpg" />
-                </div>
-                <div class="back">
-                    <img class="figure-img img-thumbnail" src="./imagenes/mal.jpg">
-                </div>
-            </div>
-
-
-            <div class="col-3" id="card2">
-                <div class="front">
-                    <img class="img-thumbnail" src="./imagenes/phelps.png" />
-                </div>
-                <div class="back">
-                    <img class="img-thumbnail" src="./imagenes/mal.png">
-                </div>
+            <div class="col text-center">
+                <h1 class="display-1">¿Quíen es quíen?</h1>
             </div>
         </div>
         <div class="row">
-            <div class="col-3">
-                <p>Mo Farah</p>
-            </div>
-            <div class="col-3">
-                <p>Rafael Nadal</p>
-            </div>
-            <div class="col-3">
-                <p>Michael Phelps</p>
+            <div class="col">
+                <h3></h3>
             </div>
         </div>
-        <div class="row">
-            <div class="col-3" id="card3">
-                <div class="front">
-                    <img class="img-thumbnail" src="./imagenes/uchimura.jpg" />
+        <!--Esta fila agrupa todas las imagenes-->
+        <div class="row imagenes">
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-3 " id="card">
+                        <div class="front">
+                            <img class="figure-img img-fluid" src="./imagenes/farah.jpg">
+                        </div>
+                        <div class="back">
+                            <img class="figure-img img-fluid" src="./imagenes/mal.webp">
+                        </div>
+                    </div>
+        
+        
+                    <div class="col-3 offset-1" id="card1">
+                        <div class="front">
+                            <img class=" figure-img img-fluid" src="./imagenes/nadal.jpg" />
+                        </div>
+                        <div class="back">
+                            <img class="figure-img img-fluid" src="./imagenes/mal.webp">
+                        </div>
+                    </div>
+        
+        
+                    <div class="col-3 offset-1" id="card2">
+                        <div class="front">
+                            <img class="figure-img img-fluid" src="./imagenes/phelps.png" />
+                        </div>
+                        <div class="back">
+                            <img class="figure-img img-fluid" src="./imagenes/mal.webp">
+                        </div>
+                    </div>
+                    
                 </div>
-                <div class="back">
-                    <img class="img-thumbnail" src="./imagenes/mal.jpg">
+        
+                <div class="row pt-4">
+                    <div class="col-3 text-center">
+                        <p>Mo-Farah</p>
+                    </div>
+                    <div class="col-3 offset-1 text-center">
+                        <p>Rafael-Nadal</p>
+                    </div>
+                    <div class="col-3 offset-1 text-center">
+                        <p>Michael-Phelps</p>
+                    </div>
                 </div>
+        
+                <div class="row ">
+                    <div class="col-3" id="card3">
+                        <div class="front">
+                            <img class="figure-img img-fluid" src="./imagenes/uchimura.jpg" />
+                        </div>
+                        <div class="back">
+                            <img class="figure-img img-fluid" src="./imagenes/mal.webp">
+                        </div>
+                    </div>
+        
+        
+                    <div class="col-3 offset-1" id="card4">
+                        <div class="front">
+                            <img class="img-fluid" src="./imagenes/wiggins.jpg" />
+                        </div>
+                        <div class="back">
+                            <img class="figure-img img-fluid" src="./imagenes/mal.webp">
+                        </div>
+                    </div>
+        
+                    <div class="col-3 offset-1" id="card5">
+                        <div class="front">
+                            <img class="figure-img img-fluid" src="./imagenes/williams.jpg" />
+                        </div>
+                        <div class="back">
+                            <img class="figure-img img-fluid" src="./imagenes/mal.webp">
+                        </div>
+                    </div>
+                </div>
+                <div class="row pt-4">
+                    <div class="col-3 text-center">
+                        <p>Kōhei-Uchimura</p>
+                    </div>
+                    <div class="col-3 offset-1 text-center">
+                        <p>Bradley-Wiggins</p>
+                    </div>
+                    <div class="col-3 offset-1 text-center">
+                        <p>Serena-Williams</p>
+                    </div>
+                </div>  
             </div>
-
-
-            <div class="col-3" id="card4">
-                <div class="front">
-                    <img class="img-thumbnail" src="./imagenes/wiggins.jpg" />
-                </div>
-                <div class="back">
-                    <img class="img-thumbnail" src="./imagenes/mal.jpg">
-                </div>
-            </div>
-
-            <div class="col-3" id="card5">
-                <div class="front">
-                    <img class="img-thumbnail" src="./imagenes/williams.jpg" />
-                </div>
-                <div class="back">
-                    <img class="img-thumbnail" src="./imagenes/mal.jpg">
+            <div class="col-4">
+                <div class="row">
+                    <div class="col">
+                        <h2>Lista</h2>
+                        <ul></ul>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-3">
-                <p>Kōhei Uchimura</p>
+        <!--Esta es la imgane de bien-->
+        <div class="row" id="bien">
+            <div class="col-12">
+                <img src="./imagenes/bien1.gif" class="img-fluid bien" >
             </div>
-            <div class="col-3">
-                <p>Bradley Wiggins</p>
-            </div>
-            <div class="col-3">
-                <p>Serena Williams</p>
-            </div>
-        </div>
-        <div class="row">
-            <img src="./imagenes/bien.gif" class="bien">
+            
         </div>
     </div>          
 </body>

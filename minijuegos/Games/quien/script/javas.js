@@ -21,9 +21,17 @@ $(document).ready(function(){
 		$('img').click(function(){
 			if ($(this).attr('src') == src){
 				$('.imagen').css('display','none');
-				$('.bien').css('display','block');
+				$('.acierto').css('display','block');
+				$('.bien').attr('src', './imagenes/bien.gif');
+				$('.bien').animate({
+					width: '700px',
+					heigth: '700px',
+					textalign: 'center'
+				});
 				sessionStorage.miPuntuaction = parseInt(sessionStorage.miPuntuaction) + puntos;//meter puntuación
-				
+				setTimeout(() => { //Salida del juego
+					window.location.replace("../../View/vistaMapa/selectGame.html");
+				}, 1000);
 			}
 			else {
 				puntos -= 300;

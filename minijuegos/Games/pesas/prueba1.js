@@ -1,13 +1,16 @@
 $(document).ready(function(){
+    pressStart();
+    $(".button").click(function(){
     levanta();
     //Movimiento de escenario
     $('body').animate({
         'background-position-x': '8080%'
     }, 50000, 'linear');
-
+    });
 })
 //Levantamiento de pesas pulsando <- y ->
 function levanta(){
+    $(".button").hide();//Esconde el botón start
     var j = 600;
     var fetch = true;
     var fallo = 0;
@@ -43,17 +46,21 @@ function levanta(){
             if(resultado == "00:00"){
                 $(document).off("keyup");
                 clearInterval(crono);
-                $("#output").text("No has podido levantar la pesa en el tiempo establecido, otra vez será. ");
-                setTimeout(function (){window.location.replace("../../View/vistaMapa/selectGame.html")}, 4000);
+                $("#output").text("No has podido levantar la pesa en el tiempo establecido, otra vez será. ")
+                setTimeout(function (){window.location.replace("../vistaMapa/selectGame.html")}, 3000);
+                
             }
             var puntuacion = parseInt(calculaPuntuacion(resultado))
             $("#output").text("Tu puntuación ha sido " +  Math.floor(puntuacion));
+            sessionStorage.miPuntuaction = parseInt(sessionStorage.miPuntuaction) + puntuacion;
+            setTimeout(function (){window.location.replace("../vistaMapa/selectGame.html")}, 3000);
 
         }
         if(j>630){
             $(document).off("keyup");
             clearInterval(crono);
-            $("#output").text("No puedes levantar la pesa, otra vez será. ") 
+            $("#output").text("No puedes levantar la pesa, otra vez será. ");
+            setTimeout(function (){window.location.replace("../vistaMapa/selectGame.html")}, 3000); 
         }
         if(j==550){
             //Estado 1
@@ -67,7 +74,16 @@ function levanta(){
     }); 
 }
 
-
+//Crea el botón start que da inicio a la carrera
+function pressStart(){
+    var divStart = $("<div>");
+    var boton = $("<a>").text("START!");
+    divStart.attr("id", "info");
+    boton.attr("class", "button");
+    boton.attr("href", "#");
+    $("section").append(divStart);
+    $("#info").append(boton);
+}
 
 
 //Cronometro -- No tiene en cuenta horas y minutos
@@ -114,9 +130,5 @@ function calculaPuntuacion(tiempo){
 
     return devuelvePuntos;
 }
-
-
-
-
 
 

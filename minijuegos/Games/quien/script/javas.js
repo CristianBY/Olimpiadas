@@ -1,5 +1,7 @@
 $(document).ready(function(){
     $.post("./php/json.php", function(r){
+		var puntos = 2000;
+
     	var obj = JSON.parse(r);
     	var aleatorio= 0;
 		var src;
@@ -28,12 +30,13 @@ $(document).ready(function(){
 					heigth: '700px',
 					textalign: 'center'
 				});
+				sessionStorage.miPuntuaction = parseInt(sessionStorage.miPuntuaction) + puntos;//meter puntuación
 				setTimeout(() => { //Salida del juego
 					window.location.replace("../../View/vistaMapa/selectGame.html");
 				}, 1000);
 			}
 			else {
-
+				puntos -= 300;
 				pistitas(pista,cont);
 				cont++;
 			}

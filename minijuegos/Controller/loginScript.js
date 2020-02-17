@@ -1,12 +1,11 @@
-$(document).ready(function () {
-    
-    $("#puntuacion").click(function () { 
-    
-        window.location.replace("http://localhost/Olimpiadas/minijuegos/View/puntuacion.php");
-        
+$(document).ready(function() {
+    $("#puntuacion").click(function() {
+
+        window.location.replace("http://localhost/Olimpiadas/minijuegos/View/puntuaction.html");
+
     });
-    $("#entrar").click(function () { 
-        
+    $("#entrar").click(function() {
+
         $.ajax({
             type: "POST",
             url: "../Controller/loginController.php",
@@ -15,12 +14,13 @@ $(document).ready(function () {
                 course: $(".course").val()
             },
             dataType: "json",
-            success: function (response) {
-                if (response == "ERROR"){
+            success: function(response) {
+                if (response == "ERROR") {
                     $("#text").prepend("<p class='error'>Nombre de grupo existente inserte otro</p>");
                 } else {
-                    sessionStorage.setItem("misesion",response.nameGroup+","+response.course);
-                    sessionStorage.setItem("mijuego",0);
+                    sessionStorage.setItem("misesion", response.nameGroup + "," + response.course);
+                    sessionStorage.setItem("mijuego", 0);
+                    sessionStorage.setItem('miPuntuaction', 0);
                     window.location.replace("http://localhost/Olimpiadas/minijuegos/View/vistaMapa/selectGame.html");
                 }
 
@@ -31,9 +31,9 @@ $(document).ready(function () {
 
     });
 
-	setInterval(function(){
-		$("#efectoBlink").toggleClass("parpadeo");
-	},400);
+    setInterval(function() {
+        $("#efectoBlink").toggleClass("parpadeo");
+    }, 400);
 
 
 });

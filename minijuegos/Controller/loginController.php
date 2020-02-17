@@ -1,7 +1,7 @@
 <?php
     require_once("../Model/User.php");
     //$user = new User($_POST['nameGroup'],$_POST['course']);
-    $user = new User($_POST['nameGroup'],$_POST['course']);
+    $user = new User($_POST['nameGroup'],$_POST['course'],0);
     $validation = $user->verificarUsuario(); // Verificación de usuario en la base de datos
 
     if (!$validation){ // Login correcto

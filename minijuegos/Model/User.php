@@ -9,10 +9,11 @@ class User
     private $course;
 
     //Constructor para inicio juego
-    function __construct($nameGroup,$course)
+    function __construct($nameGroup,$course,$puntuaction)
     {
         $this->nameGroup = $nameGroup;
         $this->course = $course;
+        $this->puntuaction = $puntuaction;
     }
 
     //Setters
@@ -76,9 +77,10 @@ class User
     public function insertUser()
     {
         $conn = BaseDatos::connectDB();
-        $insert = "INSERT INTO users (nameGroup, course, puntuaction) values ('" . $this->nameGroup . "','" . $this->course . "','" . $this->puntuaction . "');";
+        $insert = "INSERT INTO users (nameGroup, course, puntuaction) VALUES ('" . $this->nameGroup . "','" . $this->course . "','" . $this->puntuaction . "');";
         try {
             $conn->exec($insert);
+            
         } catch (PDOException $e) {
             echo $e->getMessage();
         }

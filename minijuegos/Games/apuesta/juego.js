@@ -85,10 +85,15 @@ function juegoPrincipal(){
     congela_gif("corredor1");
     congela_gif("corredor2");
     congela_gif("corredor3");
-    var puntuacion = 100/// Será la puntuación que se envía a la BBDD
+    
 
     }, 11000);
+<<<<<<< HEAD
+    setTimeout(function (){window.location.replace("../vistaMapa/selectGame.html")}, 14000);
+
+=======
     setTimeout(function (){window.location.replace("../../View/vistaMapa/selectGame.html")}, 14000);
+>>>>>>> 98b691e84f1dcd0cf36ed1317e024ef61fe2cb45
 }
 //Velocidad de los corredores
 function velocidad(a,b) {
@@ -105,8 +110,9 @@ function resultados(select, winner){
     var resultados2 = $("<p>").text("Y ha ganado " + winner);
     $("#result").append(resultados2);
     if(select == winner){
-        var resultados3 = $("<p>").text("Felicidades, has ganado 100 puntos");
+        var resultados3 = $("<p>").text("Felicidades, has ganado 1000 puntos");
         $("#result").append(resultados3);    
+        sessionStorage.miPuntuaction = parseInt(sessionStorage.miPuntuaction) + 1000;
     }else{
         var resultados3 = $("<p>").text("Mala suerte, has perdido tu apuesta");
         $("#result").append(resultados3);  

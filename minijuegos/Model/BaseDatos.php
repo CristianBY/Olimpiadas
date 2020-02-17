@@ -6,7 +6,7 @@ abstract class BaseDatos
     private static $dataBase = 'olimpiadas';
     private static $user = 'olimpiadas';
     private static $pass = 'abc123.';
-    private static $port = 3307;
+    private static $port = 3306;
 
     public static function connectDB()
     {

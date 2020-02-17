@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $.post("./php/json.php", function(r){
+		var puntos = 2000;
     	var obj = JSON.parse(r);
     	var aleatorio= 0;
 		var src;
@@ -11,7 +12,6 @@ $(document).ready(function(){
 			src = obj[aleatorio].respuesta;
 			pista = obj[aleatorio].pistas;
 		}
-		var srcimg = './imagenes/farah.jpg';
 		$("#card").flip({axis: 'x'}); 
 		$("#card1").flip({ axis: 'x' }); 
 		$("#card2").flip({ axis: 'x' }); 
@@ -21,8 +21,8 @@ $(document).ready(function(){
 		$('img').click(function(){
 			if ($(this).attr('src') == src){
 				$('.imagen').css('display','none');
-				$('.acierto').css('display','block');
-				$('.bien').attr('src', './imagenes/bien.gif');
+				$('.bien').css('display','block');
+				$('.bien').attr('src', '');
 				$('.bien').animate({
 					width: '700px',
 					heigth: '700px',
@@ -30,7 +30,7 @@ $(document).ready(function(){
 				});
 			}
 			else {
-
+				puntos -= 300;
 				pistitas(pista,cont);
 				cont++;
 			}

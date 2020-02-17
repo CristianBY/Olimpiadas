@@ -20,7 +20,7 @@ $(document).ready(function() {
                 } else {
                     sessionStorage.setItem("misesion", response.nameGroup + "," + response.course);
                     sessionStorage.setItem("mijuego", 0);
-                    sessionStorage.setItem('mipuntuaction', 0);
+                    sessionStorage.setItem('miPuntuaction', 0);
                     window.location.replace("http://localhost/Olimpiadas/minijuegos/View/vistaMapa/selectGame.html");
                 }
 

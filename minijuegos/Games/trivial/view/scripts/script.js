@@ -77,7 +77,7 @@ function isCorrect(respuesta, correcta) {
 
         $(respuestaSelector).toggle();
         $(respuestaSelector).css("background-color", "green");
-        sessionStorage.miPuntuaction = parseInt(sessionStorage.miPuntuaction) + 500;
+        sessionStorage.miPuntuaction = parseInt(sessionStorage.miPuntuaction) + 500;//meter puntuación
         setTimeout(function() {
             window.location.href = "index.html";
         }, 2000);

@@ -109,7 +109,7 @@ $(document).ready(function () {
         sessionStorage.miPuntuaction = parseInt(sessionStorage.miPuntuaction) + xMax;//meter puntuación
         setTimeout(() => {
             window.location.replace("../../View/vistaMapa/selectGame.html");
-        },6000);
+        },5000);
     });
 
     function velocidadVisual(velocidad,angulo) { // Velocidad a la que se ve el lanzamiento dependiendo de la velocidad.

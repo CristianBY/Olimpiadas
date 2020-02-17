@@ -60,7 +60,8 @@ $(document).ready(function () {
                 $(".btn-lanzar").css("display","block");
                 
             });
-        },5);   
+        },5);
+        
     });
 
     $(".btn-lanzar").click(function () {
@@ -104,7 +105,11 @@ $(document).ready(function () {
                 }
                 clearInterval(intervaloLanzamiento);
             }
-        },velocidadIntervalo);      
+        },velocidadIntervalo);
+        
+        setTimeout(() => {
+            window.location.replace("../../View/vistaMapa/selectGame.html");
+        },8000);
     });
 
     function velocidadVisual(velocidad,angulo) { // Velocidad a la que se ve el lanzamiento dependiendo de la velocidad.

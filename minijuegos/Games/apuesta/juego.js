@@ -88,8 +88,12 @@ function juegoPrincipal(){
     
 
     }, 11000);
+<<<<<<< HEAD
     setTimeout(function (){window.location.replace("../vistaMapa/selectGame.html")}, 14000);
 
+=======
+    setTimeout(function (){window.location.replace("../../View/vistaMapa/selectGame.html")}, 14000);
+>>>>>>> 98b691e84f1dcd0cf36ed1317e024ef61fe2cb45
 }
 //Velocidad de los corredores
 function velocidad(a,b) {

@@ -1,19 +1,14 @@
 <?php
-    session_start();
-    require("../View/vistaIndex.html");
-    require("../Model/Usuario.php");
-    $user = new User($_POST['nameGroup'],$_POST['course']);
+    require_once("../Model/User.php");
+    //$user = new User($_POST['nameGroup'],$_POST['course']);
+    $user = new User($_POST['nameGroup'],$_POST['course'],0);
     $validation = $user->verificarUsuario(); // Verificación de usuario en la base de datos
 
-    if (isset($_POST['enviar'])){
-        if ($validation){
-            $_SESSION['userLogIn'] = $user;
-            header('Location: ../index.php');
-        } else {
-            header('Location: ../Controller/selectionController.php');
-        }    
-    }
-    if (isset($_POST['verPuntuacion'])){
-        header('Location: Controller/puntuacionController.php');
-    }    
+    if (!$validation){ // Login correcto
+        $usuario = ["nameGroup"=>$_POST['nameGroup'],"course"=>$_POST['course']];
+        echo json_encode($usuario);
+    } else{
+        echo "ERROR";
+    } 
+       
 ?>

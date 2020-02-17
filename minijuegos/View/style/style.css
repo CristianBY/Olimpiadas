@@ -1,0 +1,17 @@
+@font-face {
+    font-family: street;
+    src: url('../fonts/SSF4\ ABUKET.ttf');
+  }
+
+body{
+    font-family: "street";
+    background-image: url("../../Games/trivial/view/images/fondo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.tabla{
+    background-color:rgba(255, 255,255, .3);
+    margin-top:200px
+}

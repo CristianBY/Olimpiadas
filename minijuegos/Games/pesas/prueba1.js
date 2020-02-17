@@ -2,11 +2,9 @@ $(document).ready(function(){
     pressStart();
     $(".button").click(function(){
     levanta();
-
     setTimeout(function () {
         $("#output").text("No has podido levantar la pesa en el tiempo establecido, otra vez será. ")
         setTimeout(function (){window.location.replace("http://localhost/Olimpiadas/minijuegos/View/vistaMapa/selectGame.html")}, 3000);
-
     },30000);
     //Movimiento de escenario
     $('body').animate({
@@ -22,8 +20,6 @@ function levanta(){
     var fallo = 0;
 
     var crono=setInterval(demo(), 20);
-
-    
     $(document).bind("keyup", function(event) { 
         
         var key = (event.keyCode ? event.keyCode : event.which); 
@@ -42,11 +38,7 @@ function levanta(){
                 fallo = 0;
             }
         }
-        ///
 
-  
-            
-        
         console.log(fallo);
         $("#pesas").css({ top: j + "px" });  
         //Para el crono cuando la pesa llega arriba y guarda el tiempo tardado 

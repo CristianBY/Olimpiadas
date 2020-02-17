@@ -2,7 +2,13 @@
 	padding: 0;
 	margin: 0;
 }
+
+@font-face {
+    font-family: street;
+    src: url('../fonts/arcade.TTF');
+  }
 body{
+    font-family: street;
 	height: 100%;
     width: 100%;
     background-color: black;
@@ -10,19 +16,37 @@ body{
     background-image: url(../imagenes/cell.jpg);
 }
 
-section{
+.uno{
     margin-left: 20%;
     margin-right: 20%;
     background-color: white;
     padding-bottom: 650px;
     text-align: center;
+	background-image: url(../imagenes/tatami.jpg);
+	background-position: center;
+}
+
+.dos{
+	background-color: #3498db;
+	position: absolute;
+	display: inline-block; 
+	padding: 20px 40px;
+	color: white;
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	transform: translate(180%, -100%);
+	vertical-align: middle;
+	text-decoration: none;
+	font-size: 1vw;
+	background-color: #01070a;   
 }
 
 #pesas{
     top: 590px; 
     position: absolute; 
     margin-left: auto;
-	margin-left: 1%;
+	margin-left: 24%;
 }
 
 .button { 
@@ -34,9 +58,13 @@ section{
 	left: 50%;
 	transform: translate(-50%, -50%);
 	vertical-align: middle;
-	font-family: 'Rubik One', sans-serif;
 	text-decoration: none;
 	font-size: 4vw;
 	transition: all .5s;
-	background-color: #3498db;   
+	background-color: #11527e;   
+}
+
+.button:hover{
+	background-color: black;
+	color: rgb(236, 238, 229);
 }

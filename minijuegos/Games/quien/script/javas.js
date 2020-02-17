@@ -22,12 +22,8 @@ $(document).ready(function(){
 			if ($(this).attr('src') == src){
 				$('.imagen').css('display','none');
 				$('.bien').css('display','block');
-				$('.bien').attr('src', '');
-				$('.bien').animate({
-					width: '700px',
-					heigth: '700px',
-					textalign: 'center'
-				});
+				sessionStorage.miPuntuaction = parseInt(sessionStorage.miPuntuaction) + puntos;//meter puntuación
+				
 			}
 			else {
 				puntos -= 300;

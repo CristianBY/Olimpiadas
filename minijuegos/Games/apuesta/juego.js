@@ -85,7 +85,11 @@ function juegoPrincipal(){
     congela_gif("corredor1");
     congela_gif("corredor2");
     congela_gif("corredor3");
+    
+
     }, 11000);
+    setTimeout(function (){window.location.replace("../vistaMapa/selectGame.html")}, 14000);
+
 }
 //Velocidad de los corredores
 function velocidad(a,b) {
@@ -102,15 +106,20 @@ function resultados(select, winner){
     var resultados2 = $("<p>").text("Y ha ganado " + winner);
     $("#result").append(resultados2);
     if(select == winner){
-        var resultados3 = $("<p>").text("Felicidades, has ganado 100 puntos");
+        var resultados3 = $("<p>").text("Felicidades, has ganado 1000 puntos");
         $("#result").append(resultados3);    
+        sessionStorage.miPuntuaction = parseInt(sessionStorage.miPuntuaction) + 1000;
     }else{
         var resultados3 = $("<p>").text("Mala suerte, has perdido tu apuesta");
-        $("#result").append(resultados3);   
+        $("#result").append(resultados3);  
+        youWin = false; 
     }
     var sonic = $("<img id='sonic' src='images/sonic.gif'>");
     $("#carrera").append(sonic);
+
+
 }
+//Desactiva el gif
 function congela_gif(src) {
     i = document.getElementById(src);
     var c = document.createElement('canvas');
@@ -125,6 +134,7 @@ function congela_gif(src) {
             i.parentNode.replaceChild(c, i);
     }
 }
+//Activa el gif
 function descongela_gif(src, corr) {
     $(src).attr("src", "images/" + corr);
 }

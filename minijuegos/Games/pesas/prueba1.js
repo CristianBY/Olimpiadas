@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+$(document).ready(function(){
+    pressStart();
+    $(".button").click(function(){
+    levanta();
+    //Movimiento de escenario
+    $('body').animate({
+        'background-position-x': '8080%'
+    }, 50000, 'linear');
+    });
+})
+//Levantamiento de pesas pulsando <- y ->
+function levanta(){
+    $(".button").hide();//Esconde el botón start
+=======
 $(document).ready(function() {
         levanta();
         //Movimiento de escenario
@@ -8,6 +23,7 @@ $(document).ready(function() {
     })
     //Levantamiento de pesas pulsando <- y ->
 function levanta() {
+>>>>>>> 98b691e84f1dcd0cf36ed1317e024ef61fe2cb45
     var j = 600;
     var fetch = true;
     var fallo = 0;
@@ -43,18 +59,34 @@ function levanta() {
             if (resultado == "00:00") {
                 $(document).off("keyup");
                 clearInterval(crono);
+<<<<<<< HEAD
+                $("#output").text("No has podido levantar la pesa en el tiempo establecido, otra vez será. ")
+                setTimeout(function (){window.location.replace("../vistaMapa/selectGame.html")}, 3000);
+                
+            }
+            var puntuacion = parseInt(calculaPuntuacion(resultado))
+            $("#output").text("Tu puntuación ha sido " +  Math.floor(puntuacion));
+            sessionStorage.miPuntuaction = parseInt(sessionStorage.miPuntuaction) + puntuacion;
+            setTimeout(function (){window.location.replace("../vistaMapa/selectGame.html")}, 3000);
+=======
                 $("#output").text("No has podido levantar la pesa en el tiempo establecido, otra vez será. ");
                 setTimeout(function() { window.location.replace("../../View/vistaMapa/selectGame.html") }, 4000);
             }
             var puntuacion = parseInt(calculaPuntuacion(resultado))
             $("#output").text("Tu puntuación ha sido " + Math.floor(puntuacion));
 
+>>>>>>> 98b691e84f1dcd0cf36ed1317e024ef61fe2cb45
 
         }
         if (j > 630) {
             $(document).off("keyup");
             clearInterval(crono);
+<<<<<<< HEAD
+            $("#output").text("No puedes levantar la pesa, otra vez será. ");
+            setTimeout(function (){window.location.replace("../vistaMapa/selectGame.html")}, 3000); 
+=======
             $("#output").text("No puedes levantar la pesa, otra vez será. ")
+>>>>>>> 98b691e84f1dcd0cf36ed1317e024ef61fe2cb45
         }
         if (j == 550) {
             //Estado 1
@@ -68,7 +100,16 @@ function levanta() {
     });
 }
 
-
+//Crea el botón start que da inicio a la carrera
+function pressStart(){
+    var divStart = $("<div>");
+    var boton = $("<a>").text("START!");
+    divStart.attr("id", "info");
+    boton.attr("class", "button");
+    boton.attr("href", "#");
+    $("section").append(divStart);
+    $("#info").append(boton);
+}
 
 
 //Cronometro -- No tiene en cuenta horas y minutos

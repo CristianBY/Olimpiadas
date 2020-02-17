@@ -29,6 +29,7 @@ $(document).ready(function(){
 			if ($(this).attr('src') == src){
 				$('.imagenes').css('display','none');
 				$('#bien').css('display','block');
+				$('#bien').css('width','40%');
 				sessionStorage.miPuntuaction = parseInt(sessionStorage.miPuntuaction) + puntos;//meter puntuación
 				setTimeout(() => { //Salida del juego
 					window.location.replace("../../View/vistaMapa/selectGame.html");

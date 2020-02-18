@@ -49,7 +49,7 @@ function levanta(){
             var puntuacion = parseInt(calculaPuntuacion(resultado))
             $("#output").text("Tu puntuación ha sido " +  Math.floor(puntuacion));
             sessionStorage.miPuntuaction = parseInt(sessionStorage.miPuntuaction) + puntuacion;
-            setTimeout(function (){window.location.replace("../View/vistaMapa/selectGame.html")}, 3000);
+            setTimeout(function (){window.location.replace("../../View/vistaMapa/selectGame.html")}, 3000);
 
         }
  
@@ -57,7 +57,7 @@ function levanta(){
             $(document).off("keyup");
             clearInterval(crono);
             $("#output").text("No puedes levantar la pesa, otra vez será. ");
-            setTimeout(function (){window.location.replace("../View/vistaMapa/selectGame.html")}, 3000); 
+            setTimeout(function (){window.location.replace("../../View/vistaMapa/selectGame.html")}, 3000); 
         }
         if(j==550){
             //Estado 1

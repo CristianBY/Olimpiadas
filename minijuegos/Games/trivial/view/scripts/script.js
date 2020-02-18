@@ -78,6 +78,7 @@ function isCorrect(respuesta, correcta) {
         $(respuestaSelector).toggle();
         $(respuestaSelector).css("background-color", "green");
         sessionStorage.miPuntuaction = parseInt(sessionStorage.miPuntuaction) + 500;//meter puntuación
+        $(".respuesta").text("La respuesta es correcta. Has obtenido 500ptos")
         setTimeout(function() {
             window.location.href = "index.html";
         }, 2000);
@@ -86,6 +87,8 @@ function isCorrect(respuesta, correcta) {
     } else {
         $(respuestaSelector).toggle();
         $(respuestaSelector).css("background-color", "red")
+        $(".respuesta").text("La respuesta es inccorrecta.");
+
         setTimeout(function() {
             window.location.href = "index.html";
         }, 2000);

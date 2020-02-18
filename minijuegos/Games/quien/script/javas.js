@@ -16,7 +16,7 @@ $(document).ready(function(){
 			pista = obj[aleatorio].pistas;
 		}
 		/*Hacen los flip */
-		$("#card").flip({axis: 'x'}); 
+		$("#card").flip({axis: 'x'});
 		$("#card1").flip({ axis: 'x' }); 
 		$("#card2").flip({ axis: 'x' }); 
 		$("#card3").flip({ axis: 'x' }); 
@@ -25,7 +25,7 @@ $(document).ready(function(){
 		/*Al hacer click en la imagen ve si el src es el mismo que el del json y 
 		si lo es oculta todas las imagenes, y visualiza el gif de bien. Tambien mete 
 		en una seción la puntuación y se sale en 3 segundos. Si no te quita puntos y hace la funcion y aumenta un contador*/
-		$('img').click(function(){
+		$('img').click(function(e){
 			if ($(this).attr('src') == src){
 				$('.imagenes').css('display','none');
 				$('#bien').css('display','block');
@@ -36,9 +36,16 @@ $(document).ready(function(){
 				}, 3000);
 			}
 			else {
+				var target = e.currentTarget;
+				$(target).css("display", "none");
+				$('.oculto').css("display", "block");
+				//$(target).off('click');
 				puntos -= 300;
-				pistitas(pista,cont);
-				cont++;
+				if($(target).css('display') =='none'){
+					pistitas(pista,cont);
+					cont++;
+				}
+				
 			}
 		});
 		
@@ -57,3 +64,4 @@ function pistitas(pista,cont){
 
 	}	
 }
+

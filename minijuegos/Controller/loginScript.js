@@ -14,12 +14,13 @@ $(document).ready(function() {
                 nameGroup: $("#nameGroup").val(),
                 course: $(".course").val()
             },
-            dataType: "json",
             success: function(response) {
-                if (response == "ERROR") {
+
+                if (response == "ERROR") { // Devuelve mensaje de usuario ya registrado
                     $("#text").prepend("<p class='error'>Nombre de grupo existente inserte otro</p>");
-                } else {
-                    sessionStorage.setItem("misesion", response.nameGroup + "," + response.course);
+                } else { // En el caso de introducir bien un nombre
+                    var json = JSON.parse(response);
+                    sessionStorage.setItem("misesion", json.nameGroup + "," + json.course);
                     sessionStorage.setItem("mijuego", 0);
                     sessionStorage.setItem('miPuntuaction', 0);
                     window.location.replace("vistaMapa/selectGame.html");

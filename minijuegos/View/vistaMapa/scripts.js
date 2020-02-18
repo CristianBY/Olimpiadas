@@ -53,7 +53,7 @@ function movimientoMario() {
             $("#mario").animate({ left: "85%", }, 3100);
             sessionStorage.setItem('mijuego', 0);
             setTimeout(() => {
-                window.location.replace("puntuaction.html");
+                window.location.replace("../puntuaction.html");
             }, 2000);
 
         default:

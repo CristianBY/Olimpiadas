@@ -10,9 +10,11 @@ $(document).ready(function () {
             
             if (sube){ //Control de oscilación
                 $(".carga-fuerza").css("width",valor+"px");
+                $(".carga-fuerza").text(valor);
                 valor++;
             } else {
                 $(".carga-fuerza").css("width",valor+"px");
+                $(".carga-fuerza").text(valor);
                 valor--;
             }
             if (valor == 100){
@@ -42,9 +44,11 @@ $(document).ready(function () {
             
             if (sube){ //Control de oscilación
                 $(".carga-angulo").css("width",valor+"px");
+                $(".carga-angulo").text(valor+"º");
                 valor++;
             } else {
                 $(".carga-angulo").css("width",valor+"px");
+                $(".carga-angulo").text(valor+"º");
                 valor--;
             }
             if (valor == 90){
@@ -96,8 +100,6 @@ $(document).ready(function () {
                 x++;
             } else {
                 $(".puntuacion").css("display", "block");
-                $(".puntuacion").css("top", "75%");
-                $(".puntuacion").css("left", "10%");
                 if (xMax <600){
                     $(".puntuacion").text("UY QUE MALO!!!");
                 } else {

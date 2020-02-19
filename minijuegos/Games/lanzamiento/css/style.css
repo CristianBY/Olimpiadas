@@ -3,6 +3,11 @@ body{
     background-repeat: no-repeat;
     background-position: center;
 }
+.contenedor {
+    padding: 2%;
+    width: 200px;
+    background-color: rgba(241, 199, 169, 0.8);
+}
 
 .fuerza{
     width: 100px;
@@ -34,7 +39,9 @@ body{
 .puntuacion{
     display: none;
     position: absolute;
-    background-color: white;
+    background-color: #f1c7a9;
+    left: 10%;
+    top: 75%;
 } 
 
 .bola{

@@ -6,6 +6,9 @@ body{
 .pregunta{
     background-color: rgba(255,255,255,.3);
     top:100px;    
-    height: 300px;
     
+    
+}
+.oculto{
+    display: none;
 }

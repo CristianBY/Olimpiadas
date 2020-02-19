@@ -25,9 +25,9 @@ function resultadosPrincipal(){
     Resultados.attr("action", "#");
     Resultados.attr("method", "post");
     $("#formu").append(Resultados);
-    $("form").append("<input type='radio' name='apuesta' value='jugador1' required>Jugador 1 <br>");
-    $("form").append("<input type='radio' name='apuesta' value='jugador2' required>Jugador 2 <br>");
-    $("form").append("<input type='radio' name='apuesta' value='jugador3' required>Jugador 3 <br>");
+    $("form").append("<input type='radio' name='apuesta'  id = 'a1' value='jugador1' required><label for = 'a1'>Jugador 1</label> <br>");
+    $("form").append("<input type='radio' name='apuesta'  id = 'a2' value='jugador2' required><label for = 'a2'>Jugador 2</label> <br>");
+    $("form").append("<input type='radio' name='apuesta'  id = 'a3' value='jugador3' required><label for = 'a3'>Jugador 3</label> <br>");
     $("form").append("<input type='button' name='botonApuesta' value='¡APUESTA!' id='botonApuesta'><br>");
 }
 //Crea el botón start que da inicio a la carrera

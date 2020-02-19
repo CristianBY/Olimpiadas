@@ -18,9 +18,9 @@
 
 <body>
     <div class="container-sm">
-        <div class="row ">
+        <div class="row">
             <div class="col-6 p-3 ml-auto mr-auto mt-5" id="contenido">
-                <div class="col-12 ">
+                <div class="col-12 d-none d-md-block">
                     <img src="./imagen/logo.png" class="rounded float-left">
                     <h1 class="display-4">Tokio2020</h1>
                 </div>
@@ -30,15 +30,24 @@
                         <p class="h4">Cursos</p>
                     </div>
                     <div id="text2">
-                        <p class="h4"><input type="radio" name="course" value="bach" required id="bach" class="ml-4 course"><label for="bach">Bachillerato</label></p>
-                        <p class="h4"><input type="radio" name="course" value="eso" required id="eso" class="ml-4 course"><label for="eso">ESO</label></p>
-                        <p class="h4"><input type="radio" name="course" value="fp" required id="fp" class="ml-4 course"><label for="fp"> Formación profesional</label></p>
+                        <input type="radio" name="course" value="bach" required id="bach" class="ml-4 course"><span class="h4 ml-3"><label for="bach">Bachillerato</label></span><br>
+                        <input type="radio" name="course" value="eso" required id="eso" class="ml-4 course">  <span class="h4 ml-3"><label for="eso">ESO</label></span><br>
+                        <input type="radio" name="course" value="fp" required id="fp" class="ml-4 course"><span class="h4 ml-3 d-none d-md-inline"><label for="fp"> Formacion profesional</label></span>
+                        <span class="h4 ml-3 d-md-none"><label for="fp">FP</label></span>
+                        <br>
                     </div>
                     <div class="col-12 mt-4">
-                        <p>
-                            <input id="entrar" class="btn btn-primary float-left " type="button" name="entrar" value="Entrar">
-                            <input id="puntuacion" class="btn btn-primary float-right  " type="button" name="verPuntuacion" value="Ver Puntuación">
-                        </p>
+                        <div class="row">
+                            
+                        
+                        <div class="col-12 col-lg-6">
+                                <input id="entrar" class="btn btn-primary" type="button" name="entrar" value="Entrar">
+                           
+                        </div>
+                        <div class=" col-12 col-lg-6">
+                                <input id="puntuacion" class="btn btn-primary" type="button" name="verPuntuacion" value="Ver Puntuacion">
+                        </div>
+                    </div>
                     </div>
                 </form>
             </div>
